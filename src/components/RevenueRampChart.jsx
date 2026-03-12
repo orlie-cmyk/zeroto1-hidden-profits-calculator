@@ -1,6 +1,6 @@
 /**
  * RevenueRampChart.jsx
- * ZeroTo1 × Refunnel — 6-Month Revenue Growth Trajectory
+ * ZeroTo1 — 6-Month Revenue Growth Trajectory
  *
  * Stacked bar chart showing TikTok GMV + Amazon Halo + Meta Lift
  * ramping over 6 months using tier-based MoM growth rates.
@@ -17,7 +17,7 @@ import {
 
 const TIKTOK_COLOR = '#94A3B8';
 const AMAZON_COLOR = INDIGO;
-const META_COLOR   = INDIGO_LIGHT;
+const META_COLOR   = '#3B82F6';
 
 const CHART_HEIGHT = 240; // px, desktop
 
@@ -160,8 +160,8 @@ export default function RevenueRampChart({ results }) {
             gap: 6,
             padding: '4px 12px',
             borderRadius: 9999,
-            backgroundColor: 'rgba(79,70,229,0.08)',
-            border: '1px solid rgba(79,70,229,0.20)',
+            backgroundColor: 'rgba(255,235,3,0.08)',
+            border: '1px solid rgba(255,235,3,0.20)',
             fontSize: 11,
             fontWeight: 700,
             color: INDIGO,
@@ -232,7 +232,7 @@ export default function RevenueRampChart({ results }) {
                     overflow: 'hidden',
                     transition: 'opacity 0.15s',
                     opacity: hoveredMonth !== null && !isHovered ? 0.45 : 1,
-                    outline: isMonth6 ? `2px solid ${INDIGO}` : isHovered ? `1px solid rgba(0,0,0,0.15)` : 'none',
+                    outline: isMonth6 ? `2px solid ${INDIGO}` : isHovered ? `1px solid rgba(255,255,255,0.15)` : 'none',
                     outlineOffset: isMonth6 ? 2 : 0,
                   }}
                 >
@@ -310,8 +310,8 @@ export default function RevenueRampChart({ results }) {
       {/* ── Month 6 Callout ──────────────────────────────────────── */}
       <div
         style={{
-          background: 'rgba(79,70,229,0.05)',
-          border: '1px solid rgba(79,70,229,0.15)',
+          background: 'rgba(255,235,3,0.05)',
+          border: '1px solid rgba(255,235,3,0.15)',
           borderRadius: 10,
           padding: '16px 20px',
           display: 'flex',
@@ -321,7 +321,7 @@ export default function RevenueRampChart({ results }) {
           gap: 10,
         }}
       >
-        <p style={{ fontSize: 14, color: '#334155', fontFamily: FONT, margin: 0, lineHeight: 1.5 }}>
+        <p style={{ fontSize: 14, color: '#A8A8A8', fontFamily: FONT, margin: 0, lineHeight: 1.5 }}>
           By Month 6, your full revenue opportunity reaches
         </p>
         <p style={{ fontSize: 22, fontWeight: 900, color: INDIGO, fontFamily: FONT, margin: 0, letterSpacing: '-0.5px' }}>

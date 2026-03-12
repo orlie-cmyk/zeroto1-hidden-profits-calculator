@@ -46,7 +46,7 @@ function cropCanvas(source, yStart, yEnd) {
 async function generatePDF() {
   const resultsEl = document.getElementById('zt1-results-panel')
   if (!resultsEl) {
-    console.warn('[Refunnel] #zt1-results-panel not found — cannot generate PDF')
+    console.warn('[ZeroTo1] #zt1-results-panel not found — cannot generate PDF')
     return
   }
 
@@ -77,7 +77,7 @@ async function generatePDF() {
     const scale = 2
     const canvas = await html2canvas(resultsEl, {
       scale,
-      backgroundColor: '#F9FAFB',
+      backgroundColor: '#000000',
       useCORS: true,
       allowTaint: true,
       logging: false,
@@ -87,13 +87,13 @@ async function generatePDF() {
 
         const body = _clonedDoc.body
         if (body) {
-          body.style.background = '#F9FAFB'
-          body.style.backgroundColor = '#F9FAFB'
+          body.style.background = '#000000'
+          body.style.backgroundColor = '#000000'
         }
 
         // Fix container — keep padding unchanged so positions match live DOM
-        el.style.background = '#FFFFFF'
-        el.style.backgroundColor = '#FFFFFF'
+        el.style.background = '#171717'
+        el.style.backgroundColor = '#171717'
         el.style.borderRadius = '0'
         el.style.boxShadow = 'none'
 
@@ -170,12 +170,12 @@ async function generatePDF() {
 
     // Draw branded header on page 1
     pdf.setFontSize(12)
-    pdf.setTextColor(79, 70, 229)
-    pdf.text('ZEROTO1 \u00D7 REFUNNEL', pageW / 2, margin + 6, { align: 'center' })
+    pdf.setTextColor(255, 235, 3)
+    pdf.text('ZEROTO1', pageW / 2, margin + 6, { align: 'center' })
     pdf.setFontSize(9)
-    pdf.setTextColor(71, 85, 105)
+    pdf.setTextColor(168, 168, 168)
     pdf.text('HIDDEN PROFITS CALCULATOR \u2014 YOUR RESULTS', pageW / 2, margin + 11, { align: 'center' })
-    pdf.setDrawColor(79, 70, 229)
+    pdf.setDrawColor(255, 235, 3)
     pdf.setLineWidth(0.5)
     pdf.line(margin, margin + 14, pageW - margin, margin + 14)
 
@@ -203,7 +203,7 @@ async function generatePDF() {
       pdf.setFontSize(8)
       pdf.setTextColor(100, 100, 100)
       pdf.text(
-        `ZEROTO1 \u00D7 REFUNNEL  |  Page ${p} of ${totalPages}`,
+        `ZEROTO1  |  Page ${p} of ${totalPages}`,
         pageW / 2,
         pageH - 5,
         { align: 'center' }
@@ -214,24 +214,24 @@ async function generatePDF() {
     pdf.setPage(totalPages)
     const footerY = pageH - margin - 10
     pdf.setFontSize(10)
-    pdf.setTextColor(71, 85, 105)
+    pdf.setTextColor(168, 168, 168)
     pdf.text('Ready to unlock this revenue?', pageW / 2, footerY, { align: 'center' })
 
     pdf.setFontSize(11)
-    pdf.setTextColor(79, 70, 229)
+    pdf.setTextColor(255, 235, 3)
     pdf.textWithLink('Book Your Free Strategy Call \u2192', pageW / 2, footerY + 6, {
       url: CALENDLY_BASE,
       align: 'center',
     })
 
-    pdf.save('Refunnel-Hidden-Profits-Results.pdf')
+    pdf.save('ZeroTo1-Hidden-Profits-Results.pdf')
   } catch (err) {
-    console.error('[Refunnel] PDF generation failed:', err)
+    console.error('[ZeroTo1] PDF generation failed:', err)
   }
 }
 
 /**
- * CTASection — Refunnel-branded conversion section.
+ * CTASection — ZeroTo1-branded conversion section.
  */
 export default function CTASection({ results }) {
   const [isGenerating, setIsGenerating] = useState(false)
