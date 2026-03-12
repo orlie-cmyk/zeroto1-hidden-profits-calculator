@@ -2,7 +2,7 @@
  * ResultsVisualizer.jsx
  * Refunnel — Hidden Profits Calculator
  *
- * Light-mode, Electric Indigo themed results panel with 5 headline stat cards.
+ * Dark-mode, Neon Yellow themed results panel with 5 headline stat cards.
  */
 
 import { useEffect, useRef, useState } from 'react';
@@ -200,7 +200,7 @@ function IconBadge({ Icon }) {
         width: 36,
         height: 36,
         borderRadius: '50%',
-        backgroundColor: 'rgba(79,70,229,0.08)',
+        backgroundColor: 'rgba(255,235,3,0.08)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -317,9 +317,9 @@ function PlainEnglish({ children }) {
         gap: 10,
         alignItems: 'flex-start',
         padding: '14px 16px',
-        backgroundColor: 'rgba(79,70,229,0.05)',
+        backgroundColor: 'rgba(255,235,3,0.05)',
         borderRadius: 10,
-        border: '1px solid rgba(79,70,229,0.12)',
+        border: '1px solid rgba(255,235,3,0.12)',
         marginTop: 18,
         marginBottom: 4,
       }}
@@ -369,7 +369,7 @@ function ExecutiveSummary({ results }) {
       data-section="executive-summary"
       style={{
         background: BG_CARD,
-        borderRadius: 16,
+        borderRadius: 24,
         padding: '36px 28px',
         border: `2px solid ${INDIGO}`,
         marginBottom: 28,
@@ -377,7 +377,7 @@ function ExecutiveSummary({ results }) {
         position: 'relative',
         overflow: 'hidden',
         textAlign: 'center',
-        boxShadow: '0 4px 24px rgba(79,70,229,0.08)',
+        boxShadow: '0 4px 24px rgba(255,235,3,0.08)',
       }}
     >
       {/* Label */}
@@ -526,9 +526,9 @@ function HeadlineStats({ results }) {
             className="rv-animate-card"
             style={{
               backgroundColor: BG_CARD,
-              borderRadius: 16,
+              borderRadius: 24,
               padding: 20,
-              boxShadow: '0 4px 16px rgba(79,70,229,0.06)',
+              boxShadow: '0 4px 16px rgba(255,235,3,0.06)',
               border: `1px solid ${BORDER_SUBTLE}`,
               fontFamily: FONT,
               animationDelay: `${idx * 100}ms`,
@@ -581,9 +581,9 @@ function HeadlineStats({ results }) {
         style={{
           marginTop: 14,
           backgroundColor: BG_CARD,
-          borderRadius: 16,
+          borderRadius: 24,
           padding: '22px 24px',
-          boxShadow: '0 4px 16px rgba(79,70,229,0.06)',
+          boxShadow: '0 4px 16px rgba(255,235,3,0.06)',
           border: `1px solid ${BORDER_SUBTLE}`,
           borderLeft: `4px solid ${INDIGO}`,
           fontFamily: FONT,
@@ -650,7 +650,7 @@ function HaloBreakdown({ results }) {
       <div
         style={{
           backgroundColor: BG_CARD,
-          borderRadius: 16,
+          borderRadius: 24,
           padding: 26,
           border: `1px solid ${BORDER_SUBTLE}`,
           marginBottom: 20,
@@ -767,7 +767,7 @@ function MetaComparison({ results }) {
       <div
         style={{
           backgroundColor: BG_CARD,
-          borderRadius: 16,
+          borderRadius: 24,
           padding: 26,
           border: `1px solid ${BORDER_SUBTLE}`,
           marginBottom: 20,
@@ -794,13 +794,13 @@ function MetaComparison({ results }) {
               <tr>
                 <th style={thStyle}>Metric</th>
                 <th style={thStyle}>Current</th>
-                <th style={{ ...thStyle, backgroundColor: 'rgba(79,70,229,0.04)', color: INDIGO }}>With TikTok Content</th>
+                <th style={{ ...thStyle, backgroundColor: 'rgba(255,235,3,0.04)', color: INDIGO }}>With TikTok Content</th>
                 <th style={thStyle}>Change</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((row, i) => {
-                const rowBg = i % 2 === 0 ? 'transparent' : 'rgba(0,0,0,0.02)';
+                const rowBg = i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.03)';
                 let ChangeArrow = null;
                 if (row.direction === 'up') ChangeArrow = ArrowUpRight;
                 else if (row.direction === 'down') ChangeArrow = ArrowDownRight;
@@ -809,7 +809,7 @@ function MetaComparison({ results }) {
                   <tr key={i} style={{ backgroundColor: rowBg }}>
                     <td style={{ ...tdBase, fontWeight: 600 }}>{row.metric}</td>
                     <td style={{ ...tdBase, color: TEXT_BODY }}>{row.current}</td>
-                    <td style={{ ...tdBase, fontWeight: 700, backgroundColor: 'rgba(79,70,229,0.04)' }}>{row.after}</td>
+                    <td style={{ ...tdBase, fontWeight: 700, backgroundColor: 'rgba(255,235,3,0.04)' }}>{row.after}</td>
                     <td style={tdBase}>
                       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3, color: INDIGO, fontWeight: 700, fontSize: 12 }}>
                         {ChangeArrow && <ChangeArrow size={13} />}
@@ -834,7 +834,7 @@ function MetaComparison({ results }) {
               <div
                 key={i}
                 style={{
-                  backgroundColor: 'rgba(0,0,0,0.02)',
+                  backgroundColor: 'rgba(255,255,255,0.03)',
                   borderRadius: 12,
                   padding: '14px 16px',
                   border: `1px solid ${BORDER_SUBTLE}`,
@@ -846,7 +846,7 @@ function MetaComparison({ results }) {
                     style={{
                       display: 'inline-flex', alignItems: 'center', gap: 3,
                       fontSize: 12, fontWeight: 700, color: INDIGO,
-                      backgroundColor: 'rgba(79,70,229,0.08)',
+                      backgroundColor: 'rgba(255,235,3,0.08)',
                       padding: '3px 8px', borderRadius: 6, fontFamily: FONT,
                     }}
                   >
@@ -858,7 +858,7 @@ function MetaComparison({ results }) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'center' }}>
                   <div style={{ textAlign: 'center', flex: 1 }}>
                     <span style={{ fontSize: 10, fontWeight: 700, color: TEXT_BODY, textTransform: 'uppercase', letterSpacing: '3px', display: 'block', marginBottom: 4, fontFamily: FONT }}>Current</span>
-                    <span style={{ fontSize: 18, fontWeight: 700, color: '#64748B', fontFamily: FONT }}>{row.current}</span>
+                    <span style={{ fontSize: 18, fontWeight: 700, color: '#A8A8A8', fontFamily: FONT }}>{row.current}</span>
                   </div>
                   <span style={{ fontSize: 20, color: TEXT_BODY, fontWeight: 300, flexShrink: 0 }}>{'\u2192'}</span>
                   <div style={{ textAlign: 'center', flex: 1 }}>
@@ -905,7 +905,7 @@ function ContentEngine({ results }) {
       <div
         style={{
           backgroundColor: BG_CARD,
-          borderRadius: 16,
+          borderRadius: 24,
           padding: 26,
           border: `1px solid ${BORDER_SUBTLE}`,
           marginBottom: 20,
@@ -932,10 +932,10 @@ function ContentEngine({ results }) {
             <div
               key={i}
               style={{
-                backgroundColor: m.highlight ? 'rgba(79,70,229,0.05)' : 'rgba(0,0,0,0.02)',
+                backgroundColor: m.highlight ? 'rgba(255,235,3,0.05)' : 'rgba(255,255,255,0.03)',
                 borderRadius: 12,
                 padding: '16px 18px',
-                border: m.highlight ? '1px solid rgba(79,70,229,0.12)' : `1px solid ${BORDER_SUBTLE}`,
+                border: m.highlight ? '1px solid rgba(255,235,3,0.12)' : `1px solid ${BORDER_SUBTLE}`,
               }}
             >
               <span
@@ -988,14 +988,14 @@ function AnnualProjection({ results }) {
         className="rv-annual-inner"
         style={{
           background: BG_CARD,
-          borderRadius: 16,
+          borderRadius: 24,
           padding: '44px 32px',
           border: `2px solid ${INDIGO}`,
           textAlign: 'center',
           fontFamily: FONT,
           position: 'relative',
           overflow: 'hidden',
-          boxShadow: '0 4px 24px rgba(79,70,229,0.08)',
+          boxShadow: '0 4px 24px rgba(255,235,3,0.08)',
         }}
       >
         <p
