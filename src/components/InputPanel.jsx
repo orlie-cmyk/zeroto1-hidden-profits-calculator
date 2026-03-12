@@ -114,7 +114,7 @@ function InfoTooltip({ text }) {
           width: 18,
           height: 18,
           borderRadius: '50%',
-          background: 'rgba(79,70,229,0.06)',
+          background: 'rgba(255,235,3,0.06)',
           cursor: 'pointer',
           transition: 'background 0.15s',
           flexShrink: 0,
@@ -187,7 +187,7 @@ function DefaultBadge({ fieldKey, currentValue }) {
         fontSize: 10,
         fontWeight: 600,
         color: INDIGO,
-        background: 'rgba(79,70,229,0.06)',
+        background: 'rgba(255,235,3,0.06)',
         borderRadius: 6,
         padding: '2px 8px',
         marginLeft: 8,
@@ -302,7 +302,7 @@ function SliderField({ fieldDef, value, onChange }) {
           padding: '10px 14px',
           minHeight: 48,
           transition: 'border-color 0.15s, box-shadow 0.15s',
-          boxShadow: isFocused ? '0 0 0 3px rgba(79,70,229,0.12)' : 'none',
+          boxShadow: isFocused ? '0 0 0 3px rgba(255,235,3,0.12)' : 'none',
         }}
       >
         {prefix && (
@@ -365,7 +365,7 @@ function SliderField({ fieldDef, value, onChange }) {
               whiteSpace: 'nowrap',
               pointerEvents: 'none',
               zIndex: 10,
-              border: '1px solid rgba(0,0,0,0.08)',
+              border: '1px solid rgba(255,255,255,0.08)',
               opacity: isSliding ? 1 : 0,
               transition: 'opacity 0.15s ease',
             }}
@@ -420,8 +420,8 @@ function PrivacyNotice() {
         gap: 6,
         padding: '8px 14px',
         marginBottom: 24,
-        background: 'rgba(79,70,229,0.05)',
-        border: '1px solid rgba(79,70,229,0.12)',
+        background: 'rgba(255,235,3,0.05)',
+        border: '1px solid rgba(255,235,3,0.12)',
         borderRadius: 10,
       }}
     >
@@ -458,8 +458,8 @@ export default function InputPanel({ inputs, onChange, onCalculate }) {
         }
 
         @keyframes pulseGlow {
-          0%, 100% { box-shadow: 0 4px 20px rgba(79, 70, 229, 0.25); }
-          50% { box-shadow: 0 4px 30px rgba(79, 70, 229, 0.40), 0 0 40px rgba(79, 70, 229, 0.10); }
+          0%, 100% { box-shadow: 0 4px 20px rgba(255,235,3,0.25); }
+          50% { box-shadow: 0 4px 30px rgba(255,235,3,0.40), 0 0 40px rgba(255,235,3,0.10); }
         }
 
         .slider-field-wrapper input[type="range"]::-webkit-slider-thumb {
@@ -467,42 +467,42 @@ export default function InputPanel({ inputs, onChange, onCalculate }) {
           width: 22px;
           height: 22px;
           border-radius: 50%;
-          background: #4F46E5;
+          background: #FFEB03;
           cursor: grab;
-          border: 3px solid #FFFFFF;
-          box-shadow: 0 2px 8px rgba(79,70,229,0.25);
+          border: 3px solid #171717;
+          box-shadow: 0 2px 8px rgba(255,235,3,0.25);
           transition: box-shadow 0.2s, transform 0.15s;
         }
 
         .slider-field-wrapper input[type="range"]::-webkit-slider-thumb:hover {
-          box-shadow: 0 0 0 6px rgba(79,70,229,0.12);
+          box-shadow: 0 0 0 6px rgba(255,235,3,0.12);
           transform: scale(1.1);
         }
 
         .slider-field-wrapper input[type="range"]::-webkit-slider-thumb:active {
           cursor: grabbing;
           transform: scale(1.15);
-          box-shadow: 0 0 0 10px rgba(79,70,229,0.15);
+          box-shadow: 0 0 0 10px rgba(255,235,3,0.15);
         }
 
         .slider-field-wrapper input[type="range"]::-moz-range-thumb {
           width: 22px;
           height: 22px;
           border-radius: 50%;
-          background: #4F46E5;
+          background: #FFEB03;
           cursor: grab;
-          border: 3px solid #FFFFFF;
-          box-shadow: 0 2px 8px rgba(79,70,229,0.25);
+          border: 3px solid #171717;
+          box-shadow: 0 2px 8px rgba(255,235,3,0.25);
         }
 
         .slider-field-wrapper input[type="range"]::-moz-range-progress {
-          background: linear-gradient(90deg, #4F46E5, #6366F1);
+          background: linear-gradient(90deg, #FFEB03, #FFF04D);
           border-radius: 3px;
           height: 6px;
         }
 
         .slider-field-wrapper input[type="range"]::-moz-range-track {
-          background: rgba(0,0,0,0.06);
+          background: rgba(255,255,255,0.06);
           border-radius: 3px;
           height: 6px;
         }
@@ -527,13 +527,13 @@ export default function InputPanel({ inputs, onChange, onCalculate }) {
             position: sticky !important;
             bottom: 0;
             z-index: 20;
-            background: rgba(255,255,255,0.90);
+            background: rgba(0,0,0,0.90);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             margin-left: -28px !important;
             margin-right: -28px !important;
             padding: 16px 28px !important;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(255,255,255,0.1);
           }
         }
       `}</style>
@@ -620,7 +620,7 @@ export default function InputPanel({ inputs, onChange, onCalculate }) {
             minHeight: 54,
           }}
         >
-          <Zap size={18} fill="#FFFFFF" stroke="#FFFFFF" />
+          <Zap size={18} fill="#000000" stroke="#000000" />
           {'CALCULATE \u2192'}
         </button>
       </div>
