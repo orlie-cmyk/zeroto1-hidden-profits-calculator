@@ -1,6 +1,6 @@
 /**
  * ResultsVisualizer.jsx
- * Refunnel — Hidden Profits Calculator
+ * ZeroTo1 — Hidden Profits Calculator
  *
  * Dark-mode, Neon Yellow themed results panel with 5 headline stat cards.
  */

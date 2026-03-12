@@ -1,5 +1,5 @@
 /**
- * ZeroTo1 x Refunnel — Hidden Profits Calculator
+ * ZeroTo1 — Hidden Profits Calculator
  * Benchmark multipliers & default input values.
  * All hardcoded values live here — update this file to change calculations.
  */

@@ -1,32 +1,36 @@
 /**
- * Refunnel Design Tokens
+ * ZeroTo1 Design Tokens
  * Centralized brand tokens for the Hidden Profits Calculator.
  *
- * Palette: "Consumerized B2B" — Electric Indigo primary, light-mode,
- * glassmorphism cards, soft indigo glows, Plus Jakarta Sans typography.
+ * Palette: "Tech-Luxury Dark Mode" — Neon Yellow primary, pitch black,
+ * translucent dark containers, navy glows, Work Sans typography.
  */
 
 /* ── Typography ────────────────────────────────────────────────────── */
-export const FONT = "'Plus Jakarta Sans', sans-serif"
+export const FONT = "'Work Sans', sans-serif"
 
 /* ── Primary Brand ─────────────────────────────────────────────────── */
-export const INDIGO       = '#4F46E5'       // Primary CTA, active states, highlights
-export const INDIGO_LIGHT = '#6366F1'       // Hover states, secondary accent
-export const INDIGO_MUTED = '#818CF8'       // Tertiary / softer accent
+export const INDIGO       = '#FFEB03'       // Primary CTA, active states, highlights
+export const INDIGO_LIGHT = '#FFF04D'       // Hover states, secondary accent
+export const INDIGO_MUTED = '#FFD700'       // Tertiary / softer accent
 
 /* ── Vibrant Accents ───────────────────────────────────────────────── */
 export const ACCENT_GREEN = '#22C55E'       // Positive actions / data
 export const ACCENT_PINK  = '#EC4899'       // Special tags, gradient hints
 
 /* ── Backgrounds & Surfaces ────────────────────────────────────────── */
-export const BG_BASE  = '#F9FAFB'                   // Page background (off-white)
-export const BG_CARD  = '#FFFFFF'                    // Card / elevated surface
-export const BG_GLASS = 'rgba(255, 255, 255, 0.75)' // Glassmorphism card
+export const BG_BASE  = '#000000'                    // Page background (pitch black)
+export const BG_CARD  = '#171717'                    // Card / elevated surface
+export const BG_GLASS = 'rgba(23, 23, 23, 0.80)'    // Glassmorphism card
 
 /* ── Text ──────────────────────────────────────────────────────────── */
-export const TEXT_HEADING = '#1E1B4B'       // Deep Space Navy — headings
-export const TEXT_BODY    = '#475569'       // Slate Grey — body paragraphs
+export const TEXT_HEADING = '#FFFFFF'       // Pure White — headings
+export const TEXT_BODY    = '#A8A8A8'       // Light Gray — body paragraphs
 
 /* ── Borders ───────────────────────────────────────────────────────── */
-export const BORDER_SUBTLE = 'rgba(0, 0, 0, 0.05)'
-export const BORDER_INDIGO = 'rgba(79, 70, 229, 0.15)'
+export const BORDER_SUBTLE = 'rgba(255, 255, 255, 0.1)'
+export const BORDER_INDIGO = 'rgba(255, 235, 3, 0.15)'
+
+/* ── Glow & Shadows ────────────────────────────────────────────────── */
+export const GLOW_SHADOW = '0 0 100px rgba(0, 50, 150, 0.1)'
+export const BTN_TEXT    = '#000000'

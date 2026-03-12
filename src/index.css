@@ -1,34 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 /* ================================================================
-   REFUNNEL BRAND — CSS Custom Properties
+   ZEROTO1 BRAND — CSS Custom Properties
    ================================================================ */
 @theme {
-  --rf-indigo: #4F46E5;
-  --rf-indigo-light: #6366F1;
-  --rf-indigo-muted: #818CF8;
-  --rf-bg-base: #F9FAFB;
-  --rf-bg-card: #FFFFFF;
-  --rf-bg-glass: rgba(255, 255, 255, 0.75);
-  --rf-text-heading: #1E1B4B;
-  --rf-text-body: #475569;
-  --rf-border-subtle: rgba(0, 0, 0, 0.05);
-  --font-display: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --rf-indigo: #FFEB03;
+  --rf-indigo-light: #FFF04D;
+  --rf-indigo-muted: #FFD700;
+  --rf-bg-base: #000000;
+  --rf-bg-card: #171717;
+  --rf-bg-glass: rgba(23, 23, 23, 0.80);
+  --rf-text-heading: #FFFFFF;
+  --rf-text-body: #A8A8A8;
+  --rf-border-subtle: rgba(255, 255, 255, 0.1);
+  --font-display: 'Work Sans', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
 }
 
 /* ================================================================
    ROOT RESET (scoped to widget container)
    ================================================================ */
 #zeroto1-calculator-root {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #1E1B4B;
-  background: #F9FAFB;
+  color: #FFFFFF;
+  background: #000000;
   scroll-behavior: smooth;
 }
 
@@ -41,14 +41,14 @@
 }
 
 /* ================================================================
-   RANGE SLIDER — Indigo themed
+   RANGE SLIDER — Yellow themed
    ================================================================ */
 #zeroto1-calculator-root input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
   height: 6px;
-  background: #E5E7EB;
+  background: #333333;
   border-radius: 9999px;
   outline: none;
   cursor: pointer;
@@ -60,42 +60,42 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #4F46E5;
+  background: #FFEB03;
   cursor: grab;
-  border: 3px solid #FFFFFF;
-  box-shadow: 0 2px 8px rgba(79,70,229,0.25);
+  border: 3px solid #000000;
+  box-shadow: 0 2px 8px rgba(255,235,3,0.25);
   transition: box-shadow 0.2s, transform 0.15s;
 }
 
 #zeroto1-calculator-root input[type="range"]::-webkit-slider-thumb:hover {
-  box-shadow: 0 0 0 6px rgba(79,70,229,0.12);
+  box-shadow: 0 0 0 6px rgba(255,235,3,0.12);
   transform: scale(1.1);
 }
 
 #zeroto1-calculator-root input[type="range"]::-webkit-slider-thumb:active {
   cursor: grabbing;
   transform: scale(1.12);
-  box-shadow: 0 0 0 8px rgba(79,70,229,0.15);
+  box-shadow: 0 0 0 8px rgba(255,235,3,0.15);
 }
 
 #zeroto1-calculator-root input[type="range"]::-moz-range-thumb {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #4F46E5;
+  background: #FFEB03;
   cursor: grab;
-  border: 3px solid #FFFFFF;
-  box-shadow: 0 2px 8px rgba(79,70,229,0.25);
+  border: 3px solid #000000;
+  box-shadow: 0 2px 8px rgba(255,235,3,0.25);
 }
 
 #zeroto1-calculator-root input[type="range"]:focus-visible {
-  outline: 2px solid #4F46E5;
+  outline: 2px solid #FFEB03;
   outline-offset: 4px;
   border-radius: 9999px;
 }
 
 #zeroto1-calculator-root input[type="range"]:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 0 4px rgba(79,70,229,0.20), 0 2px 8px rgba(79,70,229,0.25);
+  box-shadow: 0 0 0 4px rgba(255,235,3,0.20), 0 2px 8px rgba(255,235,3,0.25);
 }
 
 /* Number input spinners hidden */
@@ -160,51 +160,51 @@
 #zeroto1-calculator-root .zt1-number-reveal:nth-child(5) { animation-delay: 0.32s; }
 
 /* ================================================================
-   FLOATING CARDS — Refunnel glassmorphism style
+   FLOATING CARDS — ZeroTo1 dark glassmorphism style
    ================================================================ */
 .floating-card {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(23, 23, 23, 0.80);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(79, 70, 229, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 100px rgba(0, 50, 150, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .floating-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(79, 70, 229, 0.10), 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 120px rgba(0, 50, 150, 0.12);
 }
 
 /* ================================================================
-   BUTTONS — Refunnel Primary CTA (Indigo pill)
+   BUTTONS — ZeroTo1 Primary CTA (Yellow pill)
    ================================================================ */
 .btn-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #4F46E5;
-  color: #FFFFFF;
+  background: #FFEB03;
+  color: #000000;
   border: none;
-  border-radius: 9999px;
+  border-radius: 999px;
   padding: 12px 28px;
   font-weight: 800;
   font-size: 16px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
   transition: all 200ms ease;
-  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 4px 20px rgba(255, 235, 3, 0.25);
   text-decoration: none;
 }
 
 .btn-cta:hover {
-  background: #6366F1;
+  background: #FFF04D;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.35);
+  box-shadow: 0 8px 30px rgba(255, 235, 3, 0.35);
 }
 
 .btn-cta:active {
@@ -218,7 +218,7 @@
 }
 
 .btn-cta:focus-visible {
-  outline: 2px solid #4F46E5;
+  outline: 2px solid #FFEB03;
   outline-offset: 3px;
 }
 
@@ -229,13 +229,13 @@
   justify-content: center;
   gap: 8px;
   background: transparent;
-  color: #1E1B4B;
-  border: 2px solid rgba(0, 0, 0, 0.10);
-  border-radius: 9999px;
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
   padding: 12px 28px;
   font-weight: 700;
   font-size: 14px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
@@ -244,37 +244,37 @@
 }
 
 .btn-ghost:hover {
-  border-color: #4F46E5;
-  color: #4F46E5;
+  border-color: #FFEB03;
+  color: #FFEB03;
 }
 
 .btn-ghost:focus-visible {
-  outline: 2px solid #4F46E5;
+  outline: 2px solid #FFEB03;
   outline-offset: 3px;
 }
 
 /* ================================================================
-   INPUT FOCUS — Indigo glow
+   INPUT FOCUS — Yellow glow
    ================================================================ */
 .input-focus {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .input-focus:focus {
-  border-color: #4F46E5;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  border-color: #FFEB03;
+  box-shadow: 0 0 0 3px rgba(255, 235, 3, 0.15);
   outline: none;
 }
 
 /* ================================================================
-   MICRO LABELS — Refunnel eyebrow style
+   MICRO LABELS — ZeroTo1 eyebrow style
    ================================================================ */
 .micro-label {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #4F46E5;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #FFEB03;
+  font-family: 'Work Sans', sans-serif;
 }
 
 /* ================================================================
@@ -283,7 +283,7 @@
 #zeroto1-calculator-root .zt1-scrollable {
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(79,70,229,0.25) transparent;
+  scrollbar-color: rgba(255,235,3,0.25) transparent;
 }
 
 #zeroto1-calculator-root .zt1-scrollable::-webkit-scrollbar {
@@ -295,12 +295,12 @@
 }
 
 #zeroto1-calculator-root .zt1-scrollable::-webkit-scrollbar-thumb {
-  background: rgba(79,70,229,0.25);
+  background: rgba(255,235,3,0.25);
   border-radius: 4px;
 }
 
 #zeroto1-calculator-root .zt1-scrollable::-webkit-scrollbar-thumb:hover {
-  background: rgba(79,70,229,0.40);
+  background: rgba(255,235,3,0.40);
 }
 
 /* ================================================================

@@ -1,5 +1,5 @@
 /**
- * ZeroTo1 x Refunnel — Hidden Profits Calculator
+ * ZeroTo1 — Hidden Profits Calculator
  * Core math engine: calculateAll(inputs) returns results for all 4 modules.
  *
  * IMPORTANT: Every numeric constant comes from BENCHMARKS — no magic numbers.
