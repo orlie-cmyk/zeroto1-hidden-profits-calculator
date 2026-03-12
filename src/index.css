@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ================================================================
+   REFUNNEL BRAND — CSS Custom Properties
+   ================================================================ */
+@theme {
+  --rf-indigo: #4F46E5;
+  --rf-indigo-light: #6366F1;
+  --rf-indigo-muted: #818CF8;
+  --rf-bg-base: #F9FAFB;
+  --rf-bg-card: #FFFFFF;
+  --rf-bg-glass: rgba(255, 255, 255, 0.75);
+  --rf-text-heading: #1E1B4B;
+  --rf-text-body: #475569;
+  --rf-border-subtle: rgba(0, 0, 0, 0.05);
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ================================================================
+   ROOT RESET (scoped to widget container)
+   ================================================================ */
+#zeroto1-calculator-root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1E1B4B;
+  background: #F9FAFB;
+  scroll-behavior: smooth;
+}
+
+#zeroto1-calculator-root *,
+#zeroto1-calculator-root *::before,
+#zeroto1-calculator-root *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================================================
+   RANGE SLIDER — Indigo themed
+   ================================================================ */
+#zeroto1-calculator-root input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #E5E7EB;
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+  transition: height 0.15s ease;
+}
+
+#zeroto1-calculator-root input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #4F46E5;
+  cursor: grab;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.25);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+#zeroto1-calculator-root input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 6px rgba(79,70,229,0.12);
+  transform: scale(1.1);
+}
+
+#zeroto1-calculator-root input[type="range"]::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.12);
+  box-shadow: 0 0 0 8px rgba(79,70,229,0.15);
+}
+
+#zeroto1-calculator-root input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #4F46E5;
+  cursor: grab;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.25);
+}
+
+#zeroto1-calculator-root input[type="range"]:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 4px;
+  border-radius: 9999px;
+}
+
+#zeroto1-calculator-root input[type="range"]:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgba(79,70,229,0.20), 0 2px 8px rgba(79,70,229,0.25);
+}
+
+/* Number input spinners hidden */
+#zeroto1-calculator-root input[type="number"] {
+  -moz-appearance: textfield;
+}
+#zeroto1-calculator-root input[type="number"]::-webkit-outer-spin-button,
+#zeroto1-calculator-root input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ================================================================
+   ANIMATIONS
+   ================================================================ */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleReveal {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes tooltipFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tooltipFadeInBelow {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes numberReveal {
+  0% { opacity: 0; transform: translateY(12px) scale(0.95); }
+  60% { opacity: 1; transform: translateY(-2px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-fade-up {
+  animation: fadeSlideUp 0.6s ease-out forwards;
+}
+
+.animate-scale-reveal {
+  animation: scaleReveal 0.4s ease-out forwards;
+}
+
+/* ================================================================
+   ANIMATED NUMBER ENTRANCE
+   ================================================================ */
+#zeroto1-calculator-root .zt1-number-reveal {
+  animation: numberReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+#zeroto1-calculator-root .zt1-number-reveal:nth-child(1) { animation-delay: 0s; }
+#zeroto1-calculator-root .zt1-number-reveal:nth-child(2) { animation-delay: 0.08s; }
+#zeroto1-calculator-root .zt1-number-reveal:nth-child(3) { animation-delay: 0.16s; }
+#zeroto1-calculator-root .zt1-number-reveal:nth-child(4) { animation-delay: 0.24s; }
+#zeroto1-calculator-root .zt1-number-reveal:nth-child(5) { animation-delay: 0.32s; }
+
+/* ================================================================
+   FLOATING CARDS — Refunnel glassmorphism style
+   ================================================================ */
+.floating-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(79, 70, 229, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(79, 70, 229, 0.10), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ================================================================
+   BUTTONS — Refunnel Primary CTA (Indigo pill)
+   ================================================================ */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #4F46E5;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  font-weight: 800;
+  font-size: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  box-shadow: 0 4px 20px rgba(79, 70, 229, 0.25);
+  text-decoration: none;
+}
+
+.btn-cta:hover {
+  background: #6366F1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(79, 70, 229, 0.35);
+}
+
+.btn-cta:active {
+  transform: translateY(0);
+}
+
+.btn-cta:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-cta:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 3px;
+}
+
+/* Ghost button variant */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: #1E1B4B;
+  border: 2px solid rgba(0, 0, 0, 0.10);
+  border-radius: 9999px;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  border-color: #4F46E5;
+  color: #4F46E5;
+}
+
+.btn-ghost:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 3px;
+}
+
+/* ================================================================
+   INPUT FOCUS — Indigo glow
+   ================================================================ */
+.input-focus {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input-focus:focus {
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  outline: none;
+}
+
+/* ================================================================
+   MICRO LABELS — Refunnel eyebrow style
+   ================================================================ */
+.micro-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #4F46E5;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ================================================================
+   SCROLLBAR — Thin custom scrollbar
+   ================================================================ */
+#zeroto1-calculator-root .zt1-scrollable {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(79,70,229,0.25) transparent;
+}
+
+#zeroto1-calculator-root .zt1-scrollable::-webkit-scrollbar {
+  width: 4px;
+}
+
+#zeroto1-calculator-root .zt1-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#zeroto1-calculator-root .zt1-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(79,70,229,0.25);
+  border-radius: 4px;
+}
+
+#zeroto1-calculator-root .zt1-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(79,70,229,0.40);
+}
+
+/* ================================================================
+   ACCESSIBILITY — Reduced motion preference
+   ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  #zeroto1-calculator-root *,
+  #zeroto1-calculator-root *::before,
+  #zeroto1-calculator-root *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE — Phones (max-width: 768px)
+   ================================================================ */
+@media (max-width: 768px) {
+  .btn-cta {
+    width: 100%;
+    padding: 14px 24px;
+  }
+
+  .btn-ghost {
+    width: 100%;
+    padding: 12px 24px;
+  }
+
+  .micro-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+}
+
+/* ================================================================
+   TOUCH DEVICES — Larger slider thumb
+   ================================================================ */
+@media (pointer: coarse) {
+  #zeroto1-calculator-root input[type="range"] {
+    height: 8px;
+  }
+
+  #zeroto1-calculator-root input[type="range"]::-webkit-slider-thumb {
+    width: 28px;
+    height: 28px;
+    border-width: 3px;
+  }
+
+  #zeroto1-calculator-root input[type="range"]::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border-width: 3px;
+  }
+}
+
+/* ================================================================
+   PRINT STYLES — Hide interactive UI, disable animations
+   NOTE: Do NOT invert theme — html2pdf uses html2canvas which
+   reads screen styles. Inverting here causes blank PDFs.
+   ================================================================ */
+@media print {
+  .btn-cta,
+  .btn-ghost,
+  #zeroto1-calculator-root input[type="range"] {
+    display: none !important;
+  }
+
+  #zeroto1-calculator-root *,
+  #zeroto1-calculator-root *::before,
+  #zeroto1-calculator-root *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
